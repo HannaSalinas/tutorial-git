@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primer Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <img src="imagenes/mi-foto.jpg" alt="Foto de perfil" class="profile-pic">
+            <h1>Mi Primer Blog</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-me">
+            <h2>Sobre Mí</h2>
+            <p>Hola, mi nombre es Hanna Salinas, estudiante de ingenieria de software y datos. Este es mi primer blog donde compartiré mis conocimientos y experiencias sobre diferentes temas. ¡Espero que disfrutes el contenido!</p>
+        </section>
+
+        <section class="dropdowns">
+            <button class="dropdown-btn">Hardware</button>
+            <div class="dropdown-content">
+                <p>El hardware es la parte física de una computadora o sistema electrónico. Incluye componentes como el procesador, la memoria RAM, el disco duro, y otros periféricos.</p>
+            </div>
+
+            <button class="dropdown-btn">Ábaco</button>
+            <div class="dropdown-content">
+                <p>El ábaco es una herramienta de cálculo antigua utilizada en muchas culturas para realizar operaciones matemáticas como suma, resta, multiplicación y división.</p>
+            </div>
+
+            <button class="dropdown-btn">Lógica Matemática</button>
+            <div class="dropdown-content">
+                <p>La lógica matemática es un área de las matemáticas que estudia los principios y métodos de razonamiento. Incluye temas como la teoría de conjuntos, la lógica proposicional y la lógica de predicados.</p>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <!-- Nueva Sección del Tutorial de Git -->
+        <section class="git-tutorial">
+            <h2>Cómo Utilizar Git</h2>
+            <p>En este tutorial, te guiaré a través de los pasos básicos para utilizar Git, desde la inicialización de un repositorio hasta la creación de ramas y la conexión a un repositorio remoto en GitHub.</p>
+
+            <h2>1. Inicialización del Repositorio Local</h2>
+            <p>Lo primero que debemos hacer es inicializar un repositorio local. Abre tu terminal y navega al directorio donde deseas crear tu proyecto. Luego, ejecuta el siguiente comando:</p>
+            <pre><code>$ git init</code></pre>
+            <p>Este comando crea un nuevo repositorio Git en tu directorio actual. Puedes verificar que se ha creado correctamente revisando el contenido del directorio:</p>
+            <pre><code>$ ls -a</code></pre>
+            <p>Deberías ver una carpeta oculta llamada <code>.git</code>, que contiene toda la configuración de Git para este proyecto.</p>
+
+            <img src="capturas/inicializar-repositorio.png" alt="Inicializar un repositorio en Git" class="screenshot">
+
+            <h2>2. Creación de Ramas (Branches)</h2>
+            <p>Una de las características más poderosas de Git es la capacidad de trabajar con ramas. Las ramas te permiten trabajar en nuevas funcionalidades sin afectar la rama principal (<code>main</code>). Para crear una nueva rama, usa el siguiente comando:</p>
+            <pre><code>$ git branch nombre-de-la-rama</code></pre>
+            <p>Para cambiar a esa nueva rama, usa:</p>
+            <pre><code>$ git checkout nombre-de-la-rama</code></pre>
+            <p>También puedes crear y cambiar a una nueva rama en un solo paso:</p>
+            <pre><code>$ git checkout -b nombre-de-la-rama</code></pre>
+
+            <img src="capturas/crear-rama.png" alt="Crear una rama en Git" class="screenshot">
+
+            <p>Una vez que termines de trabajar en tu rama, puedes combinarla con la rama principal (<code>main</code>) utilizando el comando <code>merge</code>:</p>
+            <pre><code>$ git checkout main
+$ git merge nombre-de-la-rama</code></pre>
+
+            <h2>3. Conectar el Repositorio Local con un Repositorio Remoto</h2>
+            <p>Ahora que ya tienes un repositorio local, puedes conectarlo a un repositorio remoto en GitHub para colaborar con otras personas o simplemente para hacer un respaldo. Para ello, primero crea un repositorio en GitHub, luego conecta tu repositorio local al remoto con los siguientes comandos:</p>
+            <pre><code>$ git remote add origin https://github.com/tu-usuario/tu-repositorio.git
+$ git push -u origin main</code></pre>
+
+            <img src="capturas/conectar-repositorio.png" alt="Conectar a un repositorio remoto" class="screenshot">
+
+            <p>Ahora, cada vez que realices cambios en tu proyecto, puedes subirlos a GitHub usando:</p>
+            <pre><code>$ git push</code></pre>
+        </section>
+        <!-- Fin de la Sección del Tutorial de Git -->
+
+    </main>
+
+
+
+
+    <footer>
+        <p>&copy; 2024 Mi Primer Blog</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.dropdown-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
